@@ -30,6 +30,9 @@ namespace Task.Data
                 .HasForeignKey(a => a.GovernateID)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Address>()
+                .ToTable(tb => tb.HasTrigger("trg_UpdateGovernateUserCount"));
+
 
             modelBuilder.Entity<City>()
                 .HasOne(c => c.Governate)
