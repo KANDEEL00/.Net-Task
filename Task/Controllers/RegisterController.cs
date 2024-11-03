@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
 using Task.Data.DTOs;
 using Task.Service;
 
@@ -19,8 +20,17 @@ namespace Task.Controllers
         [Route("")]
         public async Task<ActionResult<int>> CreateUser(UserDTO userDto)
         {
-            var userId = await _userService.RegisterUser(userDto);
-            return Ok(userId);
+            try
+            {
+                var userId = await _userService.RegisterUser(userDto);
+                return Ok(userId);
+            }
+            catch (ValidationException ex)
+            {
+                var arr = ex.Errors.Select(x => $"{Environment.NewLine} -- {x.PropertyName}: {x.ErrorMessage}");
+                var str = "Validation failed: " + string.Join(string.Empty, arr);
+                return BadRequest(str);
+            }
         }
     }
 }
