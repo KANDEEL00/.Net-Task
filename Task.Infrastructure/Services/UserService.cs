@@ -1,25 +1,26 @@
 ﻿using AutoMapper;
 using FluentValidation;
-using Task.Data;
-using Task.Data.DTOs;
-using Task.Data.Entities;
+using Task.Application.Dto;
+using Task.Application.Interfaces.Services;
+using Task.Domain.Entities;
+using Task.Persistence;
 
-namespace Task.Service
+namespace Task.Infrastructure.Services
 {
     public class UserService : IUserService
     {
         private readonly AppDbContext _dbContext;
         private readonly IMapper _mapper;
-        private readonly IValidator<UserDTO> _validator;
+        private readonly IValidator<UserDto> _validator;
 
-        public UserService(AppDbContext dbContext, IMapper mapper, IValidator<UserDTO> validator)
+        public UserService(AppDbContext dbContext, IMapper mapper, IValidator<UserDto> validator)
         {
             _dbContext = dbContext;
             _mapper = mapper;
             _validator = validator;
         }
 
-        public async Task<int> RegisterUser(UserDTO userDto)
+        public async Task<int> RegisterUser(UserDto userDto)
         {
             var validationResult = await _validator.ValidateAsync(userDto);
             if (!validationResult.IsValid)

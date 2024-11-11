@@ -1,17 +1,8 @@
 ﻿using FluentValidation;
 
-namespace Task.Data.DTOs
+namespace Task.Application.Dto
 {
-    public class AddressDTO
-    {
-        public int GovernateID { get; set; }
-        public int CityID { get; set; }
-        public string Street { get; set; }
-        public int BuildingNumber { get; set; }
-        public int FlatNumber { get; set; }
-    }
-
-    public class AddressDtoValidator : AbstractValidator<AddressDTO>
+    public class AddressDtoValidator : AbstractValidator<AddressDto>
     {
         public AddressDtoValidator()
         {

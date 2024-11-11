@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using Task.Data.DTOs;
-using Task.Service;
+using Task.Application.Dto;
+using Task.Application.Interfaces.Services;
 
-namespace Task.Controllers
+namespace Task.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -18,7 +18,7 @@ namespace Task.Controllers
 
         [HttpPost]
         [Route("")]
-        public async Task<ActionResult<int>> CreateUser(UserDTO userDto)
+        public async Task<ActionResult<int>> CreateUser(UserDto userDto)
         {
             try
             {

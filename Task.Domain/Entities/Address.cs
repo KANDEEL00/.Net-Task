@@ -1,4 +1,4 @@
-﻿namespace Task.Data.Entities
+﻿namespace Task.Domain.Entities
 {
     public class Address
     {
