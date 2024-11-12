@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RegistrationFormApi.Application.Interfaces;
+using RegistrationFormApi.Domain.Configrations;
 using RegistrationFormApi.Domain.Entities;
 
 namespace RegistrationFormApi.Persistence
@@ -25,38 +26,8 @@ namespace RegistrationFormApi.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
-                .HasMany(u => u.Addresses)
-                .WithOne(a => a.User)
-                .HasForeignKey(a => a.UserID)
-                .OnDelete(DeleteBehavior.Cascade);
-
-
-            modelBuilder.Entity<Address>()
-                .HasOne(a => a.Governate)
-                .WithMany(g => g.Addresses)
-                .HasForeignKey(a => a.GovernateID)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Address>()
-                .ToTable(tb => tb.HasTrigger("trg_UpdateGovernateUserCount"));
-
-
-            modelBuilder.Entity<City>()
-                .HasOne(c => c.Governate)
-                .WithMany(g => g.Cities)
-                .HasForeignKey(c => c.GovernateID)
-                .OnDelete(DeleteBehavior.Cascade);
-
-
-            modelBuilder.Entity<GovernateUserCount>()
-                .HasKey(gu => gu.GovernateID);
-
-            modelBuilder.Entity<GovernateUserCount>()
-                .HasOne(gu => gu.Governate)
-                .WithOne()
-                .HasForeignKey<GovernateUserCount>(gu => gu.GovernateID)
-                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(UserConfiguration).Assembly);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
