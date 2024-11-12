@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using RegistrationFormApi.Application.Interfaces.Services;
-using RegistrationFormApi.Infrastructure.Services;
+using RegistrationFormApi.Application.Interfaces.Repository;
+using RegistrationFormApi.Infrastructure.Repositories;
 
 namespace RegistrationFormApi.Infrastructure
 {
@@ -8,7 +8,7 @@ namespace RegistrationFormApi.Infrastructure
     {
         public static void AddInfrastructureLayer(this IServiceCollection services)
         {
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using RegistrationFormApi.Application.Features.User.Commands.Create;
 using System.Reflection;
 
 namespace RegistrationFormApi.Application
@@ -11,8 +12,7 @@ namespace RegistrationFormApi.Application
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            services.AddMediatR(Assembly.GetExecutingAssembly());
-
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateUserCommandHandler).GetTypeInfo().Assembly));
         }
     }
 }

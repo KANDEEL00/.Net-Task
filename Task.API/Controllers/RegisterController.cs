@@ -1,7 +1,8 @@
 ﻿using FluentValidation;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using RegistrationFormApi.Application.Dto;
-using RegistrationFormApi.Application.Interfaces.Services;
+using RegistrationFormApi.Application.Interfaces.Repository;
 
 namespace RegistrationFormApi.API.Controllers
 {
@@ -9,11 +10,13 @@ namespace RegistrationFormApi.API.Controllers
     [Route("[controller]")]
     public class RegisterController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly IUserRepository _userService;
+        private readonly ISender _sender;
 
-        public RegisterController(IUserService userService)
+        public RegisterController(IUserRepository userService, ISender sender)
         {
             _userService = userService;
+            _sender = sender;
         }
 
         [HttpPost]
@@ -22,7 +25,7 @@ namespace RegistrationFormApi.API.Controllers
         {
             try
             {
-                var userId = await _userService.RegisterUser(userDto);
+                var userId = await _userService.CreateUser(userDto);
                 return Ok(userId);
             }
             catch (ValidationException ex)
@@ -32,5 +35,11 @@ namespace RegistrationFormApi.API.Controllers
                 return BadRequest(str);
             }
         }
+
+        //public async Task<ActionResult<int>> CreateUser(CreateUserCommand command)
+        //{
+        //    await _sender.Send(command);
+        //    return Created();
+        //}
     }
 }
