@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.API", "Task.API\Task.A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{092BF532-B765-40B3-9626-702795DCBEDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task.Infrastructure", "Task.Infrastructure\Task.Infrastructure.csproj", "{EFEC3655-4BF9-4C70-9459-B665C1ACC22C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.Infrastructure", "Task.Infrastructure\Task.Infrastructure.csproj", "{EFEC3655-4BF9-4C70-9459-B665C1ACC22C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task.Persistence", "Task.Persistence\Task.Persistence.csproj", "{43BDC799-A3AD-4BD4-9465-4C98EB1377E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.Persistence", "Task.Persistence\Task.Persistence.csproj", "{43BDC799-A3AD-4BD4-9465-4C98EB1377E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
