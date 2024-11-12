@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Task.Domain.Entities;
+using RegistrationFormApi.Domain.Entities;
 
-namespace Task.Application.Interfaces
+namespace RegistrationFormApi.Application.Interfaces
 {
     public interface IAppDbContext
     {

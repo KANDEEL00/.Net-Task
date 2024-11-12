@@ -3,7 +3,7 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Task.Application
+namespace RegistrationFormApi.Application
 {
     public static class ServiceExtensions
     {

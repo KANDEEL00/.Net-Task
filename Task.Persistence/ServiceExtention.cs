@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Task.Persistence
+namespace RegistrationFormApi.Persistence
 {
     public static class ServiceExtension
     {

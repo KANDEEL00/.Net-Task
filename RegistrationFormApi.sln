@@ -5,19 +5,19 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B465BAAA-18A9-417C-AC7B-B0A0080F2AAE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.Domain", "Task.Domain\Task.Domain.csproj", "{584DF935-3E9D-4C5F-806B-3D0EABB5174E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistrationFormApi.Domain", "Task.Domain\RegistrationFormApi.Domain.csproj", "{584DF935-3E9D-4C5F-806B-3D0EABB5174E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.Application", "Task.Application\Task.Application.csproj", "{B6269DC8-22DC-419C-8336-DF9B0CD958A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistrationFormApi.Application", "Task.Application\RegistrationFormApi.Application.csproj", "{B6269DC8-22DC-419C-8336-DF9B0CD958A2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{3DAABFEA-C61B-4245-AC8C-860358EE4C98}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.API", "Task.API\Task.API.csproj", "{E95E89A4-DBF4-4CF4-A38E-40A449CA75F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistrationFormApi.API", "Task.API\RegistrationFormApi.API.csproj", "{E95E89A4-DBF4-4CF4-A38E-40A449CA75F3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{092BF532-B765-40B3-9626-702795DCBEDD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.Infrastructure", "Task.Infrastructure\Task.Infrastructure.csproj", "{EFEC3655-4BF9-4C70-9459-B665C1ACC22C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistrationFormApi.Infrastructure", "Task.Infrastructure\RegistrationFormApi.Infrastructure.csproj", "{EFEC3655-4BF9-4C70-9459-B665C1ACC22C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.Persistence", "Task.Persistence\Task.Persistence.csproj", "{43BDC799-A3AD-4BD4-9465-4C98EB1377E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistrationFormApi.Persistence", "Task.Persistence\RegistrationFormApi.Persistence.csproj", "{43BDC799-A3AD-4BD4-9465-4C98EB1377E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

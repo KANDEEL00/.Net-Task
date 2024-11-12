@@ -1,4 +1,4 @@
-﻿namespace Task.Domain.Entities
+﻿namespace RegistrationFormApi.Domain.Entities
 {
     public class City
     {

@@ -1,6 +1,6 @@
-﻿using Task.Application.Dto;
+﻿using RegistrationFormApi.Application.Dto;
 
-namespace Task.Application.Interfaces.Services
+namespace RegistrationFormApi.Application.Interfaces.Services
 {
     public interface IUserService
     {

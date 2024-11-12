@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using FluentValidation;
-using Task.Application.Dto;
-using Task.Application.Interfaces.Services;
-using Task.Domain.Entities;
-using Task.Persistence;
+using RegistrationFormApi.Application.Dto;
+using RegistrationFormApi.Application.Interfaces.Services;
+using RegistrationFormApi.Domain.Entities;
+using RegistrationFormApi.Persistence;
 
-namespace Task.Infrastructure.Services
+namespace RegistrationFormApi.Infrastructure.Services
 {
     public class UserService : IUserService
     {

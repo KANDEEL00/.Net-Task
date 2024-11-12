@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Task.Application.Interfaces;
-using Task.Domain.Entities;
+using RegistrationFormApi.Application.Interfaces;
+using RegistrationFormApi.Domain.Entities;
 
-namespace Task.Persistence
+namespace RegistrationFormApi.Persistence
 {
     public class AppDbContext : DbContext, IAppDbContext
     {

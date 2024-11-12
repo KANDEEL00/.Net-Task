@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using Task.Application.Dto;
-using Task.Application.Interfaces.Services;
+using RegistrationFormApi.Application.Dto;
+using RegistrationFormApi.Application.Interfaces.Services;
 
-namespace Task.API.Controllers
+namespace RegistrationFormApi.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

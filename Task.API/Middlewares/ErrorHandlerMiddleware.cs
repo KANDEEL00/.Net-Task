@@ -1,4 +1,4 @@
-﻿namespace Task.API.Middlewares
+﻿namespace RegistrationFormApi.API.Middlewares
 {
     public class ErrorHandlerMiddleware
     {
@@ -9,7 +9,7 @@
             _next = next;
         }
 
-        public async System.Threading.Tasks.Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context)
         {
             try
             {

@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Task.Application\Task.Application.csproj" />
+    <ProjectReference Include="..\Task.Application\RegistrationFormApi.Application.csproj" />
   </ItemGroup>
 
 </Project>

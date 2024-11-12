@@ -1,6 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 
-namespace Task.API.Extensions
+namespace RegistrationFormApi.API.Extensions
 {
     public static class ServiceExtensions
     {

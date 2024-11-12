@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Task.Application.Interfaces.Services;
-using Task.Infrastructure.Services;
+using RegistrationFormApi.Application.Interfaces.Services;
+using RegistrationFormApi.Infrastructure.Services;
 
-namespace Task.Infrastructure
+namespace RegistrationFormApi.Infrastructure
 {
     public static class ServiceRegistration
     {

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Task.Domain\Task.Domain.csproj" />
+    <ProjectReference Include="..\Task.Domain\RegistrationFormApi.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

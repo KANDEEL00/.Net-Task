@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Task.Application.Dto;
-using Task.Domain.Entities;
+using RegistrationFormApi.Application.Dto;
+using RegistrationFormApi.Domain.Entities;
 
-namespace Task.Application.Mappings
+namespace RegistrationFormApi.Application.Mappings
 {
     public class MappingProfile : Profile
     {

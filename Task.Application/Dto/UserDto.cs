@@ -1,4 +1,4 @@
-﻿namespace Task.Application.Dto
+﻿namespace RegistrationFormApi.Application.Dto
 {
     public class UserDto
     {

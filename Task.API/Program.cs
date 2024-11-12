@@ -1,7 +1,7 @@
-using Task.API.Extensions;
-using Task.Application;
-using Task.Infrastructure;
-using Task.Persistence;
+using RegistrationFormApi.API.Extensions;
+using RegistrationFormApi.Application;
+using RegistrationFormApi.Infrastructure;
+using RegistrationFormApi.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 

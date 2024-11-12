@@ -1,6 +1,6 @@
-﻿using Task.API.Middlewares;
+﻿using RegistrationFormApi.API.Middlewares;
 
-namespace Task.API.Extensions
+namespace RegistrationFormApi.API.Extensions
 {
     public static class AppExtensions
     {
@@ -14,7 +14,7 @@ namespace Task.API.Extensions
         }
         public static void UseErrorHandlingMiddleware(this IApplicationBuilder app)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
             app.UseMiddleware<ErrorHandlerMiddleware>();
         }
     }
