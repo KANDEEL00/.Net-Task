@@ -2,7 +2,7 @@
 using RegistrationFormApi.Application.Dto;
 using RegistrationFormApi.Application.Interfaces.Repository;
 
-namespace RegistrationFormApi.Application.Features.User.Queries.Governates
+namespace RegistrationFormApi.Application.Features.Governates.Queries
 {
     public class GovernateQueryHandler : IRequestHandler<GovernateQuery, List<GovernateDto>>
     {

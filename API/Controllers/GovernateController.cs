@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using RegistrationFormApi.Application.Features.Governates.Queries;
 using RegistrationFormApi.Application.Interfaces.Repository;
 
 namespace RegistrationFormApi.API.Controllers
@@ -9,24 +10,18 @@ namespace RegistrationFormApi.API.Controllers
     public class GovernateController : ControllerBase
     {
         private readonly ISender _sender;
-        private readonly IGovernateRepository _governateRepository;
 
-        public GovernateController(IUserRepository userRepository, ISender sender, IGovernateRepository governateRepository)
+        public GovernateController(IUserRepository userRepository, ISender sender)
         {
             _sender = sender;
-            _governateRepository = governateRepository;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var governateDtos = await _governateRepository.GetAll();
+            var governateDtos = await _sender.Send(new GovernateQuery());
             return Ok(governateDtos);
         }
-        //public async Task<IActionResult> GetAll(GovernateQuery query)
-        //{
-        //    var governateDtos = await _sender.Send(query);
-        //    return Ok(governateDtos);
-        //}
+
     }
 }

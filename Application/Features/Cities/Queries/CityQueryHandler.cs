@@ -2,7 +2,7 @@
 using RegistrationFormApi.Application.Dto;
 using RegistrationFormApi.Application.Interfaces.Repository;
 
-namespace RegistrationFormApi.Application.Features.User.Queries.Cities
+namespace RegistrationFormApi.Application.Features.Cities.Queries
 {
     public class CityQueryHandler : IRequestHandler<CityQuery, List<CityDto>>
     {

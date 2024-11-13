@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using RegistrationFormApi.Application.Dto;
 
-namespace RegistrationFormApi.Application.Features.User.Queries.Cities
+namespace RegistrationFormApi.Application.Features.Cities.Queries
 {
     public class CityQuery : IRequest<List<CityDto>>
     {
