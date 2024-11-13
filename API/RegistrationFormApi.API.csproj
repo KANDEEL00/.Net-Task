@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Task.Application\RegistrationFormApi.Application.csproj" />
-    <ProjectReference Include="..\Task.Infrastructure\RegistrationFormApi.Infrastructure.csproj" />
-    <ProjectReference Include="..\Task.Persistence\RegistrationFormApi.Persistence.csproj" />
+    <ProjectReference Include="..\Application\RegistrationFormApi.Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\RegistrationFormApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\Persistence\RegistrationFormApi.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>
