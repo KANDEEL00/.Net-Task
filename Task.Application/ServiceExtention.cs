@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using RegistrationFormApi.Application.Features.User.Commands.Create;
 using System.Reflection;
