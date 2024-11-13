@@ -20,8 +20,6 @@
     <Folder Include="Features\User\Commands\Delete\" />
     <Folder Include="Features\User\Commands\Update\" />
     <Folder Include="Enums\" />
-    <Folder Include="Features\User\Queries\Get\" />
-    <Folder Include="Features\User\Queries\List\" />
   </ItemGroup>
 
 </Project>

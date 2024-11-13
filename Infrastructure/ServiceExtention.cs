@@ -9,6 +9,8 @@ namespace RegistrationFormApi.Infrastructure
         public static void AddInfrastructureLayer(this IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IGovernateRepository, GovernateRepository>();
+            services.AddScoped<ICityRepository, CityRepository>();
         }
     }
 }
