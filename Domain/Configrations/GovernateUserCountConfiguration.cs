@@ -11,8 +11,8 @@ namespace RegistrationFormApi.Domain.Configrations
             builder.HasKey(gu => gu.GovernateID);
 
             builder.HasOne(gu => gu.Governate)
-                   .WithOne()
-                   .HasForeignKey<GovernateUserCount>(gu => gu.GovernateID)
+                   .WithOne(g => g.GovernateUserCount)
+                   .HasForeignKey<Governate>(g => g.GovernateID)
                    .OnDelete(DeleteBehavior.Cascade);
         }
     }

@@ -6,14 +6,14 @@ using RegistrationFormApi.Application.Interfaces.Repository;
 
 namespace RegistrationFormApi.API.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
-    public class RegisterController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
         private readonly ISender _sender;
 
-        public RegisterController(IUserRepository userRepository, ISender sender)
+        public UserController(IUserRepository userRepository, ISender sender)
         {
             _userRepository = userRepository;
             _sender = sender;
