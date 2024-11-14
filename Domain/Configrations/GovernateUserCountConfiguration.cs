@@ -9,11 +9,6 @@ namespace RegistrationFormApi.Domain.Configrations
         public void Configure(EntityTypeBuilder<GovernateUserCount> builder)
         {
             builder.HasKey(gu => gu.GovernateID);
-
-            builder.HasOne(gu => gu.Governate)
-                   .WithOne(g => g.GovernateUserCount)
-                   .HasForeignKey<Governate>(g => g.GovernateID)
-                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -13,6 +13,11 @@ namespace RegistrationFormApi.Domain.Configrations
                    .HasForeignKey(a => a.GovernateID)
                    .OnDelete(DeleteBehavior.Restrict);
 
+            builder.HasOne(a => a.City)
+                   .WithMany(c => c.Addresses)
+                   .HasForeignKey(a => a.CityID)
+                   .OnDelete(DeleteBehavior.Restrict);
+
             builder.ToTable(tb => tb.HasTrigger("trg_UpdateGovernateUserCount"));
         }
     }
