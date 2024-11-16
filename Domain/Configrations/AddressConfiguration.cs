@@ -18,6 +18,17 @@ namespace RegistrationFormApi.Domain.Configrations
                    .HasForeignKey(a => a.CityID)
                    .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Property(a => a.Street)
+                   .IsRequired()
+                   .HasMaxLength(200);
+
+            builder.Property(a => a.BuildingNumber)
+                   .IsRequired()
+                   .HasMaxLength(20);
+
+            builder.Property(a => a.FlatNumber)
+                   .IsRequired();
+
             builder.ToTable(tb => tb.HasTrigger("trg_UpdateGovernateUserCount"));
         }
     }

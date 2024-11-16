@@ -17,11 +17,12 @@ namespace RegistrationFormApi.Application.Dto
             // Street validation (required, max length)
             RuleFor(x => x.Street)
                 .NotEmpty().WithMessage("Street is required.")
-                .MaximumLength(100).WithMessage("Street must not exceed 100 characters.");
+                .MaximumLength(200).WithMessage("Street must not exceed 200 characters.");
 
-            // BuildingNumber validation (positive integer, required)
+            // BuildingNumber validation (required, max length)
             RuleFor(x => x.BuildingNumber)
-                .GreaterThan(0).WithMessage("Building Number must be a positive integer.");
+                .NotEmpty().WithMessage("Building Number is required.")
+                .MaximumLength(20).WithMessage("Building Number must not exceed 20 characters.");
 
             // FlatNumber validation (positive integer, required)
             RuleFor(x => x.FlatNumber)

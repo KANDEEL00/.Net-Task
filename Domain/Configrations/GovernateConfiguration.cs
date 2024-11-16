@@ -11,6 +11,11 @@ namespace RegistrationFormApi.Domain.Configrations
             builder.HasOne(g => g.GovernateUserCount)
                    .WithOne(gu => gu.Governate)
                    .HasForeignKey<GovernateUserCount>(gu => gu.GovernateID);  // Foreign key in GovernateUserCount
+
+            builder.Property(g => g.GovernateName)
+                   .IsRequired()
+                   .HasMaxLength(20)
+                   .HasColumnType("varchar");
         }
     }
 }

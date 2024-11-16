@@ -12,6 +12,11 @@ namespace RegistrationFormApi.Domain.Configrations
                    .WithMany(g => g.Cities)
                    .HasForeignKey(c => c.GovernateID)
                    .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Property(c => c.CityName)
+                   .IsRequired()
+                   .HasMaxLength(20)
+                   .HasColumnType("varchar");
         }
     }
 }

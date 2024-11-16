@@ -4,7 +4,7 @@
     {
         public int AddressID { get; set; }
         public required string Street { get; set; }
-        public required int BuildingNumber { get; set; }
+        public required string BuildingNumber { get; set; }
         public required int FlatNumber { get; set; }
         public required int UserID { get; set; }
 

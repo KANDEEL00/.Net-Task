@@ -5,8 +5,9 @@
 namespace RegistrationFormApi.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class AddAddressTrigger : Migration
+    public partial class AddressTrigger : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             // Create trigger to update the user count in GovernateUserCounts when an address is inserted or updated
@@ -30,7 +31,7 @@ namespace RegistrationFormApi.Persistence.Migrations
                 END
             ");
         }
-
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             // Drop the trigger when rolling back the migration
