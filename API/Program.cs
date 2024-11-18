@@ -1,7 +1,9 @@
 using RegistrationFormApi.API.Extensions;
 using RegistrationFormApi.Application;
 using RegistrationFormApi.Infrastructure;
+using RegistrationFormApi.Infrastructure.Logging;
 using RegistrationFormApi.Persistence;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,9 @@ builder.Services.AddPersistenceLayer();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerExtension();
+
+SerilogLogger.ConfigureLogging();
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 
@@ -30,3 +35,5 @@ app.MapControllers();
 app.MigrateDatabase();
 
 app.Run();
+
+Log.CloseAndFlush();

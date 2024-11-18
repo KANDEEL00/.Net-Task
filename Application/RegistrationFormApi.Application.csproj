@@ -1,26 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <UserSecretsId>7092067f-9419-434a-9039-2c945042975e</UserSecretsId>
+	<TargetFramework>net8.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+	<UserSecretsId>7092067f-9419-434a-9039-2c945042975e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageReference Include="MediatR" Version="12.4.1" />
+	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+	<PackageReference Include="MediatR" Version="12.4.1" />
+	<PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+	<PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
+	<PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\RegistrationFormApi.Domain.csproj" />
+	<ProjectReference Include="..\Domain\RegistrationFormApi.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\User\Commands\Delete\" />
-    <Folder Include="Features\User\Commands\Update\" />
-    <Folder Include="Enums\" />
-    <Folder Include="Features\User\Queries\" />
+	<Folder Include="Features\User\Commands\Delete\" />
+	<Folder Include="Features\User\Commands\Update\" />
+	<Folder Include="Enums\" />
+	<Folder Include="Features\User\Queries\" />
   </ItemGroup>
 
 </Project>

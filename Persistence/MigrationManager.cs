@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace RegistrationFormApi.Persistence
 {
@@ -15,12 +16,11 @@ namespace RegistrationFormApi.Persistence
                     try
                     {
                         appContext.Database.Migrate();
-                        Console.WriteLine("Migration Done");
+                        Log.Information("Database migration completed successfully.");
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("Migration Failed");
-                        Console.WriteLine(ex);
+                        Log.Error(ex, "Database migration failed.");
                         throw;
                     }
                 }
