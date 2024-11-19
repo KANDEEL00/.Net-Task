@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using RegistrationFormApi.Application.Dto;
+using RegistrationFormApi.Application.Features.Cities.DTOs;
 using RegistrationFormApi.Domain.Entities;
 
 namespace RegistrationFormApi.Application.AutoMapper

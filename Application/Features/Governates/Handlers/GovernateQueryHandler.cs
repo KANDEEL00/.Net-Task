@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using RegistrationFormApi.Application.Dto;
+using RegistrationFormApi.Application.Features.Governates.DTOs;
+using RegistrationFormApi.Application.Features.Governates.Queries;
 using RegistrationFormApi.Application.Interfaces.Repository;
 
-namespace RegistrationFormApi.Application.Features.Governates.Queries
+namespace RegistrationFormApi.Application.Features.Governates.Handlers
 {
     public class GovernateQueryHandler : IRequestHandler<GovernateQuery, List<GovernateDto>>
     {

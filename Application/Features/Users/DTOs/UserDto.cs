@@ -1,4 +1,6 @@
-﻿namespace RegistrationFormApi.Application.Dto
+﻿using RegistrationFormApi.Application.Features.Address.DTOs;
+
+namespace RegistrationFormApi.Application.Features.Users.DTOs
 {
     public class UserDto
     {

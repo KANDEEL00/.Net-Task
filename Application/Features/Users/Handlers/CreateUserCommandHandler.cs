@@ -2,11 +2,12 @@
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using RegistrationFormApi.Application.Dto;
+using RegistrationFormApi.Application.Features.Users.Commands;
+using RegistrationFormApi.Application.Features.Users.DTOs;
 using RegistrationFormApi.Application.Interfaces.Repository;
 using RegistrationFormApi.Domain.Entities;
 
-namespace RegistrationFormApi.Application.Features.Users.Commands.Create
+namespace RegistrationFormApi.Application.Features.Users.Handlers
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
     {

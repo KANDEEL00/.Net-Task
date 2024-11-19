@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using RegistrationFormApi.Application.Dto;
+using RegistrationFormApi.Application.Features.Users.DTOs;
 
-namespace RegistrationFormApi.Application.Features.Users.Commands.Create
+namespace RegistrationFormApi.Application.Features.Users.Commands
 {
     public class CreateUserCommand : IRequest<int>
     {

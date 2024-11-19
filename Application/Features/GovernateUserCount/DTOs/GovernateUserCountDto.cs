@@ -1,4 +1,4 @@
-﻿namespace RegistrationFormApi.Application.Dto
+﻿namespace RegistrationFormApi.Application.Features.GovernateUserCount.DTOs
 {
     public class GovernateUserCountDto
     {

@@ -20,7 +20,18 @@
   </ItemGroup>
 
   <ItemGroup>
-	<Folder Include="Enums\" />
+	<Folder Include="Features\Address\Commands\" />
+	<Folder Include="Features\Address\Handlers\" />
+	<Folder Include="Features\Address\Queries\" />
+	<Folder Include="Features\Cities\Commands\" />
+	<Folder Include="Features\Cities\Validations\" />
+	<Folder Include="Features\Governates\Commands\" />
+	<Folder Include="Features\Governates\Validations\" />
+	<Folder Include="Features\GovernateUserCount\Commands\" />
+	<Folder Include="Features\GovernateUserCount\Handlers\" />
+	<Folder Include="Features\GovernateUserCount\Queries\" />
+	<Folder Include="Features\GovernateUserCount\Validations\" />
+	<Folder Include="Features\Users\Queries\" />
   </ItemGroup>
 
 </Project>

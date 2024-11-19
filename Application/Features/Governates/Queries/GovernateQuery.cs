@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using RegistrationFormApi.Application.Dto;
+using RegistrationFormApi.Application.Features.Governates.DTOs;
 
 namespace RegistrationFormApi.Application.Features.Governates.Queries
 {

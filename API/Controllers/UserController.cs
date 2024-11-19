@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using RegistrationFormApi.Application.Features.Users.Commands.Create;
+using RegistrationFormApi.Application.Features.Users.Commands;
 using RegistrationFormApi.Application.Interfaces.Repository;
 
 namespace RegistrationFormApi.API.Controllers

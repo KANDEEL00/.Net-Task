@@ -1,6 +1,8 @@
 ﻿using FluentValidation;
+using RegistrationFormApi.Application.Features.Address.Validations;
+using RegistrationFormApi.Application.Features.Users.DTOs;
 
-namespace RegistrationFormApi.Application.Dto
+namespace RegistrationFormApi.Application.Features.Users.Validations
 {
     public class UserDtoValidator : AbstractValidator<UserDto>
     {

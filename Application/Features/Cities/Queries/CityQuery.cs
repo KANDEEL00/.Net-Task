@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using RegistrationFormApi.Application.Dto;
+using RegistrationFormApi.Application.Features.Cities.DTOs;
 
 namespace RegistrationFormApi.Application.Features.Cities.Queries
 {

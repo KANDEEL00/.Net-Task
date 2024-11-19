@@ -1,4 +1,4 @@
-﻿namespace RegistrationFormApi.Application.Dto
+﻿namespace RegistrationFormApi.Application.Features.Address.DTOs
 {
     public class AddressDto
     {

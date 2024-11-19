@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using RegistrationFormApi.Application.Dto;
+using RegistrationFormApi.Application.Features.Cities.DTOs;
+using RegistrationFormApi.Application.Features.Cities.Queries;
 using RegistrationFormApi.Application.Interfaces.Repository;
 
-namespace RegistrationFormApi.Application.Features.Cities.Queries
+namespace RegistrationFormApi.Application.Features.Cities.Handlers
 {
     public class CityQueryHandler : IRequestHandler<CityQuery, List<CityDto>>
     {
