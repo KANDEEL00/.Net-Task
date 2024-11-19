@@ -1,9 +1,9 @@
-﻿using RegistrationFormApi.Application.Dto;
+﻿using RegistrationFormApi.Domain.Entities;
 
 namespace RegistrationFormApi.Application.Interfaces.Repository
 {
     public interface IGovernateRepository
     {
-        Task<List<GovernateDto>> GetAll();
+        Task<List<Governate>> GetAll();
     }
 }

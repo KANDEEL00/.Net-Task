@@ -1,7 +1,6 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using RegistrationFormApi.Application.Dto;
+﻿using Microsoft.EntityFrameworkCore;
 using RegistrationFormApi.Application.Interfaces.Repository;
+using RegistrationFormApi.Domain.Entities;
 using RegistrationFormApi.Infrastructure.DB;
 
 namespace RegistrationFormApi.Infrastructure.Repositories
@@ -9,18 +8,16 @@ namespace RegistrationFormApi.Infrastructure.Repositories
     public class GovernateRepository : IGovernateRepository
     {
         private readonly AppDbContext _dbContext;
-        private readonly IMapper _mapper;
 
-        public GovernateRepository(AppDbContext dbContext, IMapper mapper)
+        public GovernateRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
-            _mapper = mapper;
         }
 
-        public async Task<List<GovernateDto>> GetAll()
+        public async Task<List<Governate>> GetAll()
         {
             var governates = await _dbContext.Governates.ToListAsync();
-            return _mapper.Map<List<GovernateDto>>(governates);
+            return governates;
         }
     }
 }

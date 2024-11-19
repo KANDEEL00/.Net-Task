@@ -1,22 +1,26 @@
-﻿using FluentValidation;
+﻿using AutoMapper;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using RegistrationFormApi.Application.Dto;
 using RegistrationFormApi.Application.Interfaces.Repository;
+using RegistrationFormApi.Domain.Entities;
 
-namespace RegistrationFormApi.Application.Features.User.Commands.Create
+namespace RegistrationFormApi.Application.Features.Users.Commands.Create
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
     {
         private readonly IUserRepository _userRepository;
         private readonly IValidator<UserDto> _validator;
         private readonly ILogger<CreateUserCommandHandler> _logger;
+        private readonly IMapper _mapper;
 
-        public CreateUserCommandHandler(IUserRepository userRepository, IValidator<UserDto> validator, ILogger<CreateUserCommandHandler> logger)
+        public CreateUserCommandHandler(IUserRepository userRepository, IValidator<UserDto> validator, ILogger<CreateUserCommandHandler> logger, IMapper mapper)
         {
             _userRepository = userRepository;
             _validator = validator;
             _logger = logger;
+            _mapper = mapper;
         }
 
         public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
@@ -31,7 +35,8 @@ namespace RegistrationFormApi.Application.Features.User.Commands.Create
             }
 
             var userDto = request.UserDto;
-            var userId = await _userRepository.Create(userDto);
+            var user = _mapper.Map<User>(userDto);
+            var userId = await _userRepository.Create(user);
 
             _logger.LogInformation("Successfully created User with ID: {UserId}", userId);
 

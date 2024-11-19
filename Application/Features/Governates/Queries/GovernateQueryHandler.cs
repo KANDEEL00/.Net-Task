@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.Extensions.Logging;
 using RegistrationFormApi.Application.Dto;
 using RegistrationFormApi.Application.Interfaces.Repository;
@@ -9,11 +10,13 @@ namespace RegistrationFormApi.Application.Features.Governates.Queries
     {
         private readonly IGovernateRepository _governateRepository;
         private readonly ILogger<GovernateQueryHandler> _logger;
+        private readonly IMapper _mapper;
 
-        public GovernateQueryHandler(IGovernateRepository governateRepository, ILogger<GovernateQueryHandler> logger)
+        public GovernateQueryHandler(IGovernateRepository governateRepository, ILogger<GovernateQueryHandler> logger, IMapper mapper)
         {
             _governateRepository = governateRepository;
             _logger = logger;
+            _mapper = mapper;
         }
 
         public async Task<List<GovernateDto>> Handle(GovernateQuery request, CancellationToken cancellationToken)
@@ -24,7 +27,7 @@ namespace RegistrationFormApi.Application.Features.Governates.Queries
             {
                 var governates = await _governateRepository.GetAll();
                 _logger.LogInformation("Successfully retrieved {Count} governates", governates.Count);
-                return governates;
+                return _mapper.Map<List<GovernateDto>>(governates);
             }
             catch (Exception ex)
             {

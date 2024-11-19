@@ -1,9 +1,9 @@
-﻿using RegistrationFormApi.Application.Dto;
+﻿using RegistrationFormApi.Domain.Entities;
 
 namespace RegistrationFormApi.Application.Interfaces.Repository
 {
     public interface IUserRepository
     {
-        Task<int> Create(UserDto userDto);
+        Task<int> Create(User user);
     }
 }

@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.Extensions.Logging;
 using RegistrationFormApi.Application.Dto;
 using RegistrationFormApi.Application.Interfaces.Repository;
@@ -9,11 +10,13 @@ namespace RegistrationFormApi.Application.Features.Cities.Queries
     {
         private readonly ICityRepository _cityRepository;
         private readonly ILogger<CityQueryHandler> _logger;
+        private readonly IMapper _mapper;
 
-        public CityQueryHandler(ICityRepository cityRepository, ILogger<CityQueryHandler> logger)
+        public CityQueryHandler(ICityRepository cityRepository, ILogger<CityQueryHandler> logger, IMapper mapper)
         {
             _cityRepository = cityRepository;
             _logger = logger;
+            _mapper = mapper;
         }
 
         public async Task<List<CityDto>> Handle(CityQuery request, CancellationToken cancellationToken)
@@ -24,7 +27,7 @@ namespace RegistrationFormApi.Application.Features.Cities.Queries
             {
                 var cities = await _cityRepository.GetCitiesOfGovernate(request.GovernateID);
                 _logger.LogInformation("Successfully retrieved {Count} cities for GovernateID: {GovernateID}", cities.Count, request.GovernateID);
-                return cities;
+                return _mapper.Map<List<CityDto>>(cities);
             }
             catch (Exception ex)
             {

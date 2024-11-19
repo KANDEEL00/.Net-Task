@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Microsoft.OpenApi.Models;
 using RegistrationFormApi.Application.Dto;
-using RegistrationFormApi.Application.Features.User.Commands.Create;
+using RegistrationFormApi.Application.Features.Users.Commands.Create;
 using RegistrationFormApi.Application.Interfaces.Repository;
 using RegistrationFormApi.Application.Mappings;
 using RegistrationFormApi.Infrastructure.DB;

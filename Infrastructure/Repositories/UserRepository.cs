@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using RegistrationFormApi.Application.Dto;
-using RegistrationFormApi.Application.Interfaces.Repository;
+﻿using RegistrationFormApi.Application.Interfaces.Repository;
 using RegistrationFormApi.Domain.Entities;
 using RegistrationFormApi.Infrastructure.DB;
 
@@ -9,17 +7,13 @@ namespace RegistrationFormApi.Infrastructure.Repositories
     public class UserRepository : IUserRepository
     {
         private readonly AppDbContext _dbContext;
-        private readonly IMapper _mapper;
-
-        public UserRepository(AppDbContext dbContext, IMapper mapper)
+        public UserRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
-            _mapper = mapper;
         }
 
-        public async Task<int> Create(UserDto userDto)
+        public async Task<int> Create(User user)
         {
-            var user = _mapper.Map<User>(userDto);
             _dbContext.Users.Add(user);
             await _dbContext.SaveChangesAsync();
             return user.UserID;
