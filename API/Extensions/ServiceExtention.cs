@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 using Microsoft.OpenApi.Models;
+using RegistrationFormApi.Application.AutoMapper;
 using RegistrationFormApi.Application.Dto;
 using RegistrationFormApi.Application.Features.Users.Commands.Create;
 using RegistrationFormApi.Application.Interfaces.Repository;
-using RegistrationFormApi.Application.Mappings;
 using RegistrationFormApi.Infrastructure.DB;
 using RegistrationFormApi.Infrastructure.Repositories;
 using System.Reflection;
@@ -15,7 +15,7 @@ namespace RegistrationFormApi.API.Extensions
         public static void RegisterServices(this IServiceCollection services)
         {
             //Application Layer
-            services.AddAutoMapper(typeof(MappingProfile).Assembly);
+            services.AddAutoMapper(typeof(UserProfile).Assembly);
             services.AddValidatorsFromAssembly(typeof(UserDtoValidator).GetTypeInfo().Assembly);
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateUserCommandHandler).GetTypeInfo().Assembly));
 
