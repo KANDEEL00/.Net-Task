@@ -1,15 +1,11 @@
 using RegistrationFormApi.API.Extensions;
-using RegistrationFormApi.Application;
-using RegistrationFormApi.Infrastructure;
 using RegistrationFormApi.Infrastructure.DB;
 using RegistrationFormApi.Infrastructure.Logging;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddApplicationLayer();
-builder.Services.AddInfrastructureLayer();
-builder.Services.AddPersistenceLayer();
+builder.Services.RegisterServices();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerExtension();

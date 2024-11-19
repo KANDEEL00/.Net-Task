@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using RegistrationFormApi.Application.Interfaces;
 using RegistrationFormApi.Domain.Configrations;
 using RegistrationFormApi.Domain.Entities;
@@ -19,7 +20,11 @@ namespace RegistrationFormApi.Infrastructure.DB
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            var constr = "Server = .\\SQLEXPRESS ; Database = Registration ;Integrated Security = True ; TrustServerCertificate = True;";
+            var configuration = new ConfigurationBuilder()
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json")
+            .Build();
+            var constr = configuration.GetConnectionString("DefaultConnection");
             optionsBuilder.UseSqlServer(constr);
         }
 

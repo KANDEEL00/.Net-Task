@@ -6,7 +6,7 @@ using RegistrationFormApi.Infrastructure.DB;
 
 namespace RegistrationFormApi.Infrastructure.Repositories
 {
-    internal class CityRepository : ICityRepository
+    public class CityRepository : ICityRepository
     {
         private readonly AppDbContext _dbContext;
         private readonly IMapper _mapper;
