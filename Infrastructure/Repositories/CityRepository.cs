@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using RegistrationFormApi.Application.Dto;
 using RegistrationFormApi.Application.Interfaces.Repository;
-using RegistrationFormApi.Persistence;
+using RegistrationFormApi.Infrastructure.DB;
 
 namespace RegistrationFormApi.Infrastructure.Repositories
 {

@@ -1,8 +1,8 @@
 using RegistrationFormApi.API.Extensions;
 using RegistrationFormApi.Application;
 using RegistrationFormApi.Infrastructure;
+using RegistrationFormApi.Infrastructure.DB;
 using RegistrationFormApi.Infrastructure.Logging;
-using RegistrationFormApi.Persistence;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

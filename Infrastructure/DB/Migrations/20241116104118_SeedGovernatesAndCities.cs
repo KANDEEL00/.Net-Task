@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace RegistrationFormApi.Persistence.Migrations
+namespace RegistrationFormApi.Infrastructure.DB.Migrations
 {
     /// <inheritdoc />
     public partial class SeedGovernatesAndCities : Migration

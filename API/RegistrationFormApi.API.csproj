@@ -17,7 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Application\RegistrationFormApi.Application.csproj" />
     <ProjectReference Include="..\Infrastructure\RegistrationFormApi.Infrastructure.csproj" />
-    <ProjectReference Include="..\Persistence\RegistrationFormApi.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>

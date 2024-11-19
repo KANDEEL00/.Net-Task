@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
-namespace RegistrationFormApi.Persistence
+namespace RegistrationFormApi.Infrastructure.DB
 {
     public static class MigrationManager
     {

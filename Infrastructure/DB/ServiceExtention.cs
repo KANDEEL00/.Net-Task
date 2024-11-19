@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace RegistrationFormApi.Persistence
+namespace RegistrationFormApi.Infrastructure.DB
 {
     public static class ServiceExtension
     {

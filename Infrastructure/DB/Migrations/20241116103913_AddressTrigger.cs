@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace RegistrationFormApi.Persistence.Migrations
+namespace RegistrationFormApi.Infrastructure.DB.Migrations
 {
     /// <inheritdoc />
     public partial class AddressTrigger : Migration

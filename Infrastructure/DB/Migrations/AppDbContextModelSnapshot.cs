@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RegistrationFormApi.Persistence;
+using RegistrationFormApi.Infrastructure.DB;
 
 #nullable disable
 
-namespace RegistrationFormApi.Persistence.Migrations
+namespace RegistrationFormApi.Infrastructure.DB.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot

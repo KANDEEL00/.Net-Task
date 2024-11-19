@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RegistrationFormApi.Persistence;
+using RegistrationFormApi.Infrastructure.DB;
 
 #nullable disable
 
-namespace RegistrationFormApi.Persistence.Migrations
+namespace RegistrationFormApi.Infrastructure.DB.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20241116103913_AddressTrigger")]

@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace RegistrationFormApi.Persistence.Migrations
+namespace RegistrationFormApi.Infrastructure.DB.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application\RegistrationFormApi.Application.csproj" />
-    <ProjectReference Include="..\Persistence\RegistrationFormApi.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

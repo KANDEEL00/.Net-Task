@@ -3,7 +3,7 @@ using RegistrationFormApi.Application.Interfaces;
 using RegistrationFormApi.Domain.Configrations;
 using RegistrationFormApi.Domain.Entities;
 
-namespace RegistrationFormApi.Persistence
+namespace RegistrationFormApi.Infrastructure.DB
 {
     public class AppDbContext : DbContext, IAppDbContext
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RegistrationFormApi.Domain.Entities;
 
-namespace RegistrationFormApi.Persistence
+namespace RegistrationFormApi.Infrastructure.DB
 {
     public static class AppDbContextSeed
     {
