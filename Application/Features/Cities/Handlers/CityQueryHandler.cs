@@ -9,26 +9,26 @@ namespace RegistrationFormApi.Application.Features.Cities.Handlers
 {
     public class CityQueryHandler : IRequestHandler<CityQuery, List<CityDto>>
     {
-        private readonly ICityRepository _cityRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger<CityQueryHandler> _logger;
         private readonly IMapper _mapper;
 
-        public CityQueryHandler(ICityRepository cityRepository, ILogger<CityQueryHandler> logger, IMapper mapper)
+        public CityQueryHandler(IUnitOfWork unitOfWork, ILogger<CityQueryHandler> logger, IMapper mapper)
         {
-            _cityRepository = cityRepository;
+            _unitOfWork = unitOfWork;
             _logger = logger;
             _mapper = mapper;
         }
 
-        public async Task<List<CityDto>> Handle(CityQuery request, CancellationToken cancellationToken)
+        public Task<List<CityDto>> Handle(CityQuery request, CancellationToken cancellationToken)
         {
             _logger.LogInformation("Handling CityQuery for GovernateID: {GovernateID}", request.GovernateID);
 
             try
             {
-                var cities = await _cityRepository.GetCitiesOfGovernate(request.GovernateID);
+                var cities = _unitOfWork.CityRepository.GetCitiesOfGovernate(request.GovernateID);
                 _logger.LogInformation("Successfully retrieved {Count} cities for GovernateID: {GovernateID}", cities.Count, request.GovernateID);
-                return _mapper.Map<List<CityDto>>(cities);
+                return Task.FromResult(_mapper.Map<List<CityDto>>(cities));
             }
             catch (Exception ex)
             {

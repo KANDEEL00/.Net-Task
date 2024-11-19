@@ -4,6 +4,6 @@ namespace RegistrationFormApi.Application.Interfaces.Repository
 {
     public interface IGovernateRepository
     {
-        Task<List<Governate>> GetAll();
+        List<Governate> GetAll();
     }
 }

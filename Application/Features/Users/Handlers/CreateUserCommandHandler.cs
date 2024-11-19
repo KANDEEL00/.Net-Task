@@ -11,14 +11,14 @@ namespace RegistrationFormApi.Application.Features.Users.Handlers
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IValidator<UserDto> _validator;
         private readonly ILogger<CreateUserCommandHandler> _logger;
         private readonly IMapper _mapper;
 
-        public CreateUserCommandHandler(IUserRepository userRepository, IValidator<UserDto> validator, ILogger<CreateUserCommandHandler> logger, IMapper mapper)
+        public CreateUserCommandHandler(IUnitOfWork unitOfWork, IValidator<UserDto> validator, ILogger<CreateUserCommandHandler> logger, IMapper mapper)
         {
-            _userRepository = userRepository;
+            _unitOfWork = unitOfWork;
             _validator = validator;
             _logger = logger;
             _mapper = mapper;
@@ -37,11 +37,12 @@ namespace RegistrationFormApi.Application.Features.Users.Handlers
 
             var userDto = request.UserDto;
             var user = _mapper.Map<User>(userDto);
-            var userId = await _userRepository.Create(user);
+            user = _unitOfWork.UserRepository.Create(user);
+            _unitOfWork.Save();
 
-            _logger.LogInformation("Successfully created User with ID: {UserId}", userId);
+            _logger.LogInformation("Successfully created User with ID: {UserId}", user.UserID);
 
-            return userId;
+            return user.UserID;
         }
     }
 }

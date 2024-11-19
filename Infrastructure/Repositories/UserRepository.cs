@@ -12,11 +12,10 @@ namespace RegistrationFormApi.Infrastructure.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<int> Create(User user)
+        public User Create(User user)
         {
             _dbContext.Users.Add(user);
-            await _dbContext.SaveChangesAsync();
-            return user.UserID;
+            return user;
         }
     }
 }

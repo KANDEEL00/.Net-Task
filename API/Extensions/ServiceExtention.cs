@@ -24,6 +24,7 @@ namespace RegistrationFormApi.API.Extensions
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IGovernateRepository, GovernateRepository>();
             services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
         public static void AddSwaggerExtension(this IServiceCollection services)
         {

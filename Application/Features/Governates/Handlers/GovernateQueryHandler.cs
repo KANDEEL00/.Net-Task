@@ -9,26 +9,26 @@ namespace RegistrationFormApi.Application.Features.Governates.Handlers
 {
     public class GovernateQueryHandler : IRequestHandler<GovernateQuery, List<GovernateDto>>
     {
-        private readonly IGovernateRepository _governateRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger<GovernateQueryHandler> _logger;
         private readonly IMapper _mapper;
 
-        public GovernateQueryHandler(IGovernateRepository governateRepository, ILogger<GovernateQueryHandler> logger, IMapper mapper)
+        public GovernateQueryHandler(IUnitOfWork unitOfWork, ILogger<GovernateQueryHandler> logger, IMapper mapper)
         {
-            _governateRepository = governateRepository;
+            _unitOfWork = unitOfWork;
             _logger = logger;
             _mapper = mapper;
         }
 
-        public async Task<List<GovernateDto>> Handle(GovernateQuery request, CancellationToken cancellationToken)
+        public Task<List<GovernateDto>> Handle(GovernateQuery request, CancellationToken cancellationToken)
         {
             _logger.LogInformation("Handling GovernateQuery");
 
             try
             {
-                var governates = await _governateRepository.GetAll();
+                var governates = _unitOfWork.GovernateRepository.GetAll();
                 _logger.LogInformation("Successfully retrieved {Count} governates", governates.Count);
-                return _mapper.Map<List<GovernateDto>>(governates);
+                return Task.FromResult(_mapper.Map<List<GovernateDto>>(governates));
             }
             catch (Exception ex)
             {

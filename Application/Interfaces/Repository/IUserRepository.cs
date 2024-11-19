@@ -4,6 +4,6 @@ namespace RegistrationFormApi.Application.Interfaces.Repository
 {
     public interface IUserRepository
     {
-        Task<int> Create(User user);
+        User Create(User user);
     }
 }

@@ -4,6 +4,6 @@ namespace RegistrationFormApi.Application.Interfaces.Repository
 {
     public interface ICityRepository
     {
-        Task<List<City>> GetCitiesOfGovernate(int GovernateID);
+        List<City> GetCitiesOfGovernate(int GovernateID);
     }
 }

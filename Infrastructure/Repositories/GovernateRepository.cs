@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using RegistrationFormApi.Application.Interfaces.Repository;
+﻿using RegistrationFormApi.Application.Interfaces.Repository;
 using RegistrationFormApi.Domain.Entities;
 using RegistrationFormApi.Infrastructure.DB;
 
@@ -14,9 +13,9 @@ namespace RegistrationFormApi.Infrastructure.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<List<Governate>> GetAll()
+        public List<Governate> GetAll()
         {
-            var governates = await _dbContext.Governates.ToListAsync();
+            var governates = _dbContext.Governates.ToList();
             return governates;
         }
     }
